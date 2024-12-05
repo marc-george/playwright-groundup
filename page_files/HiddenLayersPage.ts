@@ -8,7 +8,6 @@ export class HiddenLayersPage extends BasePage{
     }
 
     async doubleClickButtonAndCheckStatus(){
-        await this.page.locator('[style=')
         await this.page.locator('#greenButton').click()
 
         // await this.page.getByRole('button').filter({has: this.page.locator('#greenButton')}).click()

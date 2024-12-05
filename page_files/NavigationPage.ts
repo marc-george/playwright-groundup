@@ -37,7 +37,18 @@ export class NavigationPage extends BasePage{
 
     async LoadDelaysPage(){
         await this.page.getByRole('heading', {name: 'Load Delay'}).click()
-        await expect(this.page.locator('section div h3', {hasText: 'Load Delays'})).toBeVisible()
+        const pageHeader = this.page.locator('section div h3', {hasText: 'Load Delays'})
+        await expect(pageHeader).toBeVisible()
+    }
+
+    async DisabledInputPage(){
+        await this.page.getByRole('heading', {name: 'Disabled Input'}).click()
+        await expect(this.page.locator('section div h3', {hasText: 'Disabled Input'})).toBeVisible()
+    }
+
+    async DynamicTablePage(){
+        await this.page.getByRole('heading', {name: 'Dynamic Table'}).click()
+        await expect(this.page.locator('section div h3', {hasText: 'Dynamic Table'})).toBeVisible()
     }
 }
 

@@ -4,6 +4,8 @@ import { DynamicIDPage } from "./DynamicIDPage"
 import { ClassAttributePage } from "./ClassAttributePage"
 import { HiddenLayersPage } from "./HiddenLayersPage"
 import { LoadDelay } from "./LoadDelay"
+import { DisabledInputPage } from "./DisabledInputPage"
+import { DynamicTablePage } from "./DynamicTablePage"
 
 export class PageManager{
     private readonly page: Page
@@ -12,7 +14,8 @@ export class PageManager{
     private readonly classAttributePage : ClassAttributePage
     private readonly hiddenLayersPage: HiddenLayersPage
     private readonly loadDelaysPage: LoadDelay
-
+    private readonly disabledInputPage: DisabledInputPage
+    private readonly dynamicTablePage: DynamicTablePage
 
     constructor(page: Page){
         this.page = page
@@ -21,7 +24,8 @@ export class PageManager{
         this.classAttributePage = new ClassAttributePage(this.page)
         this.hiddenLayersPage = new HiddenLayersPage(this.page)
         this.loadDelaysPage = new LoadDelay(this.page)
-
+        this.disabledInputPage = new DisabledInputPage(this.page)
+        this.dynamicTablePage = new DynamicTablePage(this.page)
     }
 
     navigateTo(){
@@ -42,6 +46,14 @@ export class PageManager{
 
     onLoadDelaysPage(){
         return this.loadDelaysPage
+    }
+
+    onDisabledInputPage(){
+        return this.disabledInputPage
+    }
+
+    onDynamicTablePage(){
+        return this.dynamicTablePage
     }
 
 

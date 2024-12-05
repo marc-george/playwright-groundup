@@ -1,0 +1,23 @@
+import {test , expect} from '@playwright/test'
+import { PageManager } from '../page_files/PageManager'
+
+
+test.beforeEach(async ({page})=>{
+    await page.goto('http://uitestingplayground.com/home')
+})
+
+test('navigation stuff', async ({page})=>{
+    const pm = new PageManager(page)
+    await pm.navigateTo().DynamicIDPage()
+    await pm.onDynamicIDPage().clickButtonWithDynamicID()
+    await pm.navigateTo().HomePage()
+    await pm.navigateTo().ClassAttributePage()
+    await pm.onClassAttributePage().clickPrimaryButtonAndAcceptChromeDialog()
+    await pm.navigateTo().HomePage()
+    await pm.navigateTo().HiddenLayersPage()
+    await pm.onHiddenLayersPage().doubleClickButtonAndCheckStatus()
+    await pm.navigateTo().HomePage()
+    await pm.navigateTo().LoadDelaysPage()
+    await pm.onLoadDelaysPage().clickOnButtonAppearingAfterDelay()
+
+})

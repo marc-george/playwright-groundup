@@ -1,5 +1,5 @@
 import {test , expect} from '@playwright/test'
-import { PageManager } from '../page_files/PageManager'
+import { PageManager } from '../../page_files/PageManager'
 
 
 test.beforeEach(async ({page})=>{
@@ -8,6 +8,6 @@ test.beforeEach(async ({page})=>{
 
 test('navigation stuff', async ({page})=>{
     const pm = new PageManager(page)
-    await pm.navigateTo().ClassAttributePage()
-    await pm.onClassAttributePage().clickPrimaryButtonAndAcceptChromeDialog()
+    await pm.navigateTo().DisabledInputPage()
+    await pm.onDisabledInputPage().clickButtonWithDelayAndEnterText('this is a test')
 })

@@ -1,23 +1,14 @@
-// import {test , expect} from '@playwright/test'
-// import { PageManager } from '../page_files/PageManager'
+import { test } from '../../test-opts'
+import { PageManager } from '../../page_files/PageManager'
 
 
-// test.beforeEach(async ({page})=>{
-//     await page.goto('http://uitestingplayground.com/home')
-// })
 
-// test('navigation stuff', async ({page})=>{
-//     const pm = new PageManager(page)
-//     await pm.navigateTo().DynamicIDPage()
-//     await pm.onDynamicIDPage().clickButtonWithDynamicID()
-//     await pm.navigateTo().HomePage()
-//     await pm.navigateTo().ClassAttributePage()
-//     await pm.onClassAttributePage().clickPrimaryButtonAndAcceptChromeDialog()
-//     await pm.navigateTo().HomePage()
-//     await pm.navigateTo().HiddenLayersPage()
-//     await pm.onHiddenLayersPage().doubleClickButtonAndCheckStatus()
-//     await pm.navigateTo().HomePage()
-//     await pm.navigateTo().LoadDelaysPage()
-//     await pm.onLoadDelaysPage().clickOnButtonAppearingAfterDelay()
+test.beforeEach(async ({page, notBaseURL})=>{
+    await page.goto(notBaseURL)
+})
 
-// })
+test('navigation stuff', async ({page})=>{
+
+    console.log('ON REDDIT')
+
+})

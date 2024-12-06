@@ -1,4 +1,5 @@
 import {test, expect} from '@playwright/test'
+import { ApiPageTest } from '../../page_files/ApiPageTest'
 
 
 test('get all product list and verify', async ({page, request}) =>{
@@ -140,3 +141,4 @@ test('HTTP BIN AUTH TEST', async ({request})=>{
     const responseGetBody = await responseGet.body()
     console.log(responseGetBody)
 })
+
